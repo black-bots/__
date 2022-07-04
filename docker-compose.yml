@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  streamlit_testing:
+    build: .
+    ports:
+      - "8502:8501"
+    environment:
+      - GOOGLE_CLIENT_ID={GOOGLE_CLIENT_ID}
+      - GOOGLE_CLIENT_SECRET={GOOGLE_CLIENT_SECRET}
+      - REDIRECT_URI=http://172.17.0.2:8502
+      
