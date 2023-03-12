@@ -1,9 +1,9 @@
 import asyncio, streamlit as st
-from auth import google_oauth
+from auth import discord_oauth
 
 def render():
     authorization_url = asyncio.run(
-        google_oauth.write_authorization_url()
+        discord_oauth.write_authorization_url()
     )
 
     st.write(f'''

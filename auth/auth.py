@@ -1,6 +1,6 @@
 import streamlit as st, json, os, asyncio
 
-from auth import google_oauth
+from auth import discord_oauth
 from util import cookie_manager
 
 def is_logged_in():
@@ -16,7 +16,7 @@ def is_logged_in():
             # Verify token is correct:
             try:
                 token = asyncio.run(
-                    google_oauth.write_access_token(code)
+                    discord_oauth.write_access_token(code)
                 )
 
             except:
@@ -29,17 +29,19 @@ def is_logged_in():
                 else:
                     cookies['token'] = json.dumps(token)
 
-                    _, user_email = asyncio.run(
-                        google_oauth.get_email(token['access_token'])
+                    user_id, user_data = asyncio.run(
+                        discord_oauth.get_id_data(token['access_token'])
                     )
 
-                    cookies['user_email'] = user_email
+                    cookies['user_id'] = user_id
+                    cookies['user_username'] = user_data['username'] + '#' + user_data['discriminator']
 
                     cookies.save()
+                    st.experimental_set_query_params()
 
                     return True
 
     else:
-        token = google_oauth.json_str_to_token(cookies['token'])
+        token = discord_oauth.json_str_to_token(cookies['token'])
 
         return not token.is_expired()

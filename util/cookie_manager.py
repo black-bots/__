@@ -1,7 +1,7 @@
 import streamlit as st, os
-from streamlit_cookies_manager import EncryptedCookieManager
+from util.encrypted_cookie_manager import EncryptedCookieManager
 
-client_secret = os.environ['GOOGLE_CLIENT_SECRET']
+client_secret = os.environ['DISCORD_CLIENT_SECRET']
 
 # This should be on top of your script
 cookies = EncryptedCookieManager(
