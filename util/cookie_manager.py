@@ -1,7 +1,14 @@
-import streamlit as st, os
+import streamlit as st
+import os
 from util.encrypted_cookie_manager import EncryptedCookieManager
 
-client_secret = os.environ['ygqy7O5jufY8D5QWxMMOThbzaa_2G_8a']
+# Retrieving client_secret environment variable with a default value of None
+client_secret = os.environ.get('CLIENT_SECRET', None)
+
+# Check if client_secret is None or not before proceeding
+if client_secret is None:
+    st.error("Client secret not found. Make sure you have set the CLIENT_SECRET environment variable.")
+    st.stop()
 
 # This should be on top of your script
 cookies = EncryptedCookieManager(
