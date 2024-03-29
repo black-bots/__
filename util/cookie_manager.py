@@ -1,7 +1,7 @@
 import streamlit as st, os
 from util.encrypted_cookie_manager import EncryptedCookieManager
 
-client_secret = os.environ['DISCORD_CLIENT_SECRET']
+client_secret = os.environ['ygqy7O5jufY8D5QWxMMOThbzaa_2G_8a']
 
 # This should be on top of your script
 cookies = EncryptedCookieManager(
