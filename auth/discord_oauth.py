@@ -4,9 +4,9 @@ from httpx_oauth.clients.discord import DiscordOAuth2, PROFILE_ENDPOINT
 from httpx_oauth.oauth2 import OAuth2Token
 from httpx_oauth.errors import GetIdEmailError
 
-client_id = os.environ['DISCORD_CLIENT_ID']
-client_secret = os.environ['DISCORD_CLIENT_SECRET']
-redirect_uri = os.environ['REDIRECT_URI']
+client_id = os.environ['1223354649667567716']
+client_secret = os.environ['ygqy7O5jufY8D5QWxMMOThbzaa_2G_8a']
+redirect_uri = os.environ['http://localhost:8501']
 
 
 class MyDiscordOAuth2(DiscordOAuth2):
