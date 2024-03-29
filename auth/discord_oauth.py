@@ -6,7 +6,7 @@ from httpx_oauth.errors import GetIdEmailError
 
 os.environ['CLIENT_ID'] = '1223354649667567716'
 os.environ['CLIENT_SECRET'] = 'ygqy7O5jufY8D5QWxMMOThbzaa_2G_8a'
-os.environ['REDIRECT_URI'] = 'https://discord.com/oauth2/authorize?client_id=1223354649667567716&response_type=code&redirect_uri=https%3A%2F%2Fdiscord.streamlit.app%2F&scope=identify'
+os.environ['REDIRECT_URI'] = 'http://localhost:8501'
 client_id = os.environ['CLIENT_ID']
 client_secret = os.environ['CLIENT_SECRET']
 redirect_uri = os.environ['REDIRECT_URI']
