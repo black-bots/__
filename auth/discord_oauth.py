@@ -6,7 +6,7 @@ from httpx_oauth.errors import GetIdEmailError
 
 os.environ['CLIENT_ID'] = '1223354649667567716'
 os.environ['CLIENT_SECRET'] = 'ygqy7O5jufY8D5QWxMMOThbzaa_2G_8a'
-os.environ['REDIRECT_URI'] = 'https://discord.streamlit.app/components/home_page.py'
+os.environ['REDIRECT_URI'] = 'https://blackgram.streamlit.app'
 client_id = os.environ['CLIENT_ID']
 client_secret = os.environ['CLIENT_SECRET']
 redirect_uri = os.environ['REDIRECT_URI']
